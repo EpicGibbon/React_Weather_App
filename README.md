@@ -22,6 +22,7 @@ npm i
 Input city into search-bar and see what the temperature and forecast are where you're headed!
 
 <img src="src/assets/images/example1.png" width="350" >
+<img src="src/assets/images/example2.png" width="350" >
 
 ## License
 MIT
