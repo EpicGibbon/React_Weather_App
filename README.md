@@ -2,7 +2,7 @@
   ![badge](https://img.shields.io/badge/License-MIT-red)
 
 ## Description
-This weather app was built using the React Framework alongside with the GetWeather API. My plans further down the line are to implement different backgounds for the different enviormental conditions as well as adding the 5 day forecast functionality. 
+This weather app was built using the React Framework alongside with the GetWeather API. My plans further down the line are to implement different backgounds for the different environmental conditions as well as adding the 5 day forecast functionality. 
 
 ## Table of Contents
 * [Description](#Description)
