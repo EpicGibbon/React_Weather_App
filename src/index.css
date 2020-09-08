@@ -53,3 +53,46 @@ main {
 .search-box .search-bar:focus {
   background-color: rgba(255, 255, 255, 0.75)
 }
+
+.location-area .location {
+  color: white;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.location-area .date {
+  color: white;
+  font-size: 22px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 5px 5px rgba(50, 50, 70, 0.5);
+}
+
+.weather-area {
+  text-align: center;
+}
+
+.weather-area .temp {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
+  color: white;
+  font-size: 100px;
+  font-weight: 900;
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.weather-area .weather {
+  color: #FFF;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5)
+}

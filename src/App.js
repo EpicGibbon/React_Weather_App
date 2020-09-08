@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const API = {
   key: "c13c64c10390eb9b4417eb4f94f64ca1",
@@ -7,6 +7,16 @@ const API = {
 
 function App() {
 
+  const [query, setQuery] = useState('');
+  const [weather, setWeather] = useState({})
+
+  const search = e => {
+    if (e.key === "Enter") {
+      fetch(`${API.base}weather?q=${query}&units=metric&APPID=${API.key}`)
+      .then(res => res.json())
+      .then(result => setWeather(result))
+    }
+  }
 
   const dateSelector = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August",
@@ -21,7 +31,7 @@ function App() {
     return `${day} ${date} ${month} ${year}`
   }
 
-  
+
   return (
     <div className="app">
       <main>
@@ -33,8 +43,14 @@ function App() {
           />
         </div>
         <div className="location-area">
-          <div className="location"></div>
+          <div className="location">Houston, TX, US</div>
           <div className="date">{dateSelector(new Date())}</div>
+        </div>
+        <div className="weather-area">
+          <div className="temp">
+            15c
+          </div>
+          <div className="weather">Sunny</div>
         </div>
       </main>
     </div>
