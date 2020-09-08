@@ -13,8 +13,12 @@ function App() {
   const search = e => {
     if (e.key === "Enter") {
       fetch(`${API.base}weather?q=${query}&units=metric&APPID=${API.key}`)
-      .then(res => res.json())
-      .then(result => setWeather(result))
+        .then(res => res.json())
+        .then(result => {
+          setWeather(result)
+          setQuery('');
+          console.log(result);
+        });
     }
   }
 
@@ -40,18 +44,25 @@ function App() {
             type="text"
             className="search-bar"
             placeholder="Search.."
+            onChange={e => setQuery(e.target.value)}
+            value={query}
+            onKeyPress={search}
           />
         </div>
-        <div className="location-area">
-          <div className="location">Houston, TX, US</div>
-          <div className="date">{dateSelector(new Date())}</div>
-        </div>
-        <div className="weather-area">
-          <div className="temp">
-            15c
+        {(typeof weather.main != "undefined") ? (
+          <div>
+            <div className="location-area">
+              <div className="location">{weather.name}, {weather.sys.country}</div>
+              <div className="date">{dateSelector(new Date())}</div>
+            </div>
+            <div className="weather-area">
+              <div className="temp">
+                
           </div>
-          <div className="weather">Sunny</div>
-        </div>
+              <div className="weather">Sunny</div>
+            </div>
+          </div>
+        ) : ('')}
       </main>
     </div>
   );
